@@ -75,16 +75,17 @@ class App extends React.Component {
   }
 
   handleTodoComplete(e) {
-    var itemCompleted = e.target.id;
     const tempArr = this.state.todoArr;
-    const isComplete = (element) => element.id !== itemCompleted;
-    var filteredArr = tempArr.filter(tempItem => tempItem.id !== itemCompleted);
+    var filteredArr = tempArr.filter(tempItem => tempItem.complete != true);
+    console.log(filteredArr)
     
     this.setState({
       todoArr: filteredArr
     });
 
   }
+
+
 
   // todoCompleted() {
   //   const itemCompleted = this.state.todoArr;
